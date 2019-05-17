@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const db = require('./config/keys').mongoURI;
 const hackathonRoutes = require("./routes/hackathon");
+const postRoutes = require("./routes/post");
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.use('/hackathon', hackathonRoutes);
+app.use('/hackathon', postRoutes);
 
 app.get('/', (req, res) => res.send('Hackathon Review'));
 

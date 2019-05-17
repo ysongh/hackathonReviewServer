@@ -5,7 +5,7 @@ exports.findAllHackathon = (req, res, next) => {
         .then(result => {
             res.status(200).json({
                 msg: "Success on finding all hackathon",
-                locations: result
+                data: result
             });
         });
 };
@@ -21,7 +21,7 @@ exports.addHackathon = (req, res, next) => {
         .then(result => {
             res.status(201).json({
                 msg: "Success on adding a hackathon",
-                location: result
+                data: result
             });
         })
         .catch(err => {
