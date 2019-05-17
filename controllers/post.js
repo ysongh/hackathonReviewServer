@@ -1,6 +1,19 @@
 const Hackathon = require("../models/Hackathon");
 const Post = require("../models/Post");
 
+exports.getAllPost = (req, res, next) => {
+    const hackathonId = req.params.hackathonId;
+
+    Hackathon.findById(hackathonId)
+        .populate("posts")
+        .then(result => {
+            res.status(200).json({
+                msg: "Success on finding all the posts",
+                data: result
+            });
+        });
+};
+
 exports.addPost = (req, res, next) => {
     const hackathonId = req.params.hackathonId;
     const text = req.body.text;
