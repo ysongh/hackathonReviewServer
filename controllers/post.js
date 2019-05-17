@@ -46,3 +46,15 @@ exports.addPost = (req, res, next) => {
             return res.status(500).json({error: err});
         });
 };
+
+exports.likePost = (req, res, next) => {
+    const postId = req.params.postId;
+
+    Post.findById(postId)
+        .then(result => {
+            res.status(200).json({
+                msg: "Success on finding all the posts",
+                data: result
+            });
+        });
+};

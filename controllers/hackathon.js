@@ -2,6 +2,7 @@ const Hackathon = require("../models/Hackathon");
 
 exports.findAllHackathon = (req, res, next) => {
     Hackathon.find()
+        .populate("posts")
         .then(result => {
             res.status(200).json({
                 msg: "Success on finding all hackathon",
