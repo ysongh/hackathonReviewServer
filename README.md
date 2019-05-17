@@ -11,12 +11,12 @@ Add a hackathon
 * Body - name
 
 # Post
-Get all profiles from that location
+Get all posts from that hackathon
 * Link - https://hackathoncomplains.herokuapp.com/hackathon/:hackathonId/post
 * Request - GET
 * Params - Replace ':hackathonId' with an id of a hackathon
 
-Create a profile
+Create a post
 * Link - https://hackathoncomplains.herokuapp.com/hackathon/:hackathonId/post
 * Request - POST
 * Params - Replace ':hackathonId' with an id of a hackathon
